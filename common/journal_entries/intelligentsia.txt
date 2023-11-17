@@ -53,7 +53,6 @@ je_intelligentsia_1 = {
 						ig:ig_intelligentsia = {
 							is_in_government = yes	
 						}
-						is_at_war = no
 						NOT = {
 							any_interest_group = {
 								is_insurrectionary = yes
@@ -65,6 +64,12 @@ je_intelligentsia_1 = {
 						add = 1
 					}
 				}
+				else = {
+					set_variable = {
+						name = je_i_1_var
+						value = 0
+					}	
+				}	
 			}
 		}
 
