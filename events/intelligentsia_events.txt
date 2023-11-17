@@ -50,3 +50,43 @@ intelligentsia.1 = {
 		}
 	}
 }
+
+intelligentsia.2 = {
+	type = country_event
+	placement = root
+	title = intelligentsia.2.t
+	desc = intelligentsia.2.d
+	flavor = intelligentsia.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by intelligentsia JE 2
+	}
+
+
+	option = {
+		name = intelligentsia.2.a
+		default_option = yes
+
+		add_journal_entry = {
+			type = je_intelligentsia_3 #not yet created
+		}
+	}
+	option = {
+		name = intelligentsia.1.b
+		default_option = no
+
+		add_journal_entry = {
+			type = je_intelligentsia_3 #not yet created
+		}
+	}
+}
