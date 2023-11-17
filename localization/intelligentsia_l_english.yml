@@ -4,7 +4,7 @@
   intelligentsia.1.d: "Intelligentsia in Government."
   intelligentsia.1.f: "Intelligentsia in Government."
   intelligentsia.1.a: "Let them focus on increasing our prestige."
-  intelligentsia.1.a: "Focus on our research."
+  intelligentsia.1.b: "Focus on our research."
 
   #journal
   je_intelligentsia_init: "First Steps towards a bright Society."
