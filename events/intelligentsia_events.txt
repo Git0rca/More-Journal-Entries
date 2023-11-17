@@ -1,0 +1,52 @@
+namespace = intelligentsia
+
+#Intelligentsia in Government: Completion
+intelligentsia.1 = {
+	type = country_event
+	placement = root
+	title = intelligentsia.1.t
+	desc = intelligentsia.1.d
+	flavor = intelligentsia.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by intelligentsia JE 1
+	}
+
+
+	option = {
+		name = intelligentsia.1.a
+		default_option = yes
+
+		add_modifier = {
+			name = intelligentsia_modifier_1_a
+			months = normal_modifier_time
+		}
+		
+		add_journal_entry = {
+			type = je_intelligentsia_2
+		}
+	}
+	option = {
+		name = intelligentsia.1.b
+		default_option = no
+
+		add_modifier = {
+			name = intelligentsia_modifier_1_b
+			months = normal_modifier_time
+		}
+
+		add_journal_entry = {
+			type = je_intelligentsia_2
+		}
+	}
+}

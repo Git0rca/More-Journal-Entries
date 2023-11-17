@@ -1,0 +1,7 @@
+intelligentsia_modifier_1_a = {
+	country_prestige_mult = 0.10
+}
+
+intelligentsia_modifier_1_b = {
+	country_weekly_innovation_mult = 0.10
+}
