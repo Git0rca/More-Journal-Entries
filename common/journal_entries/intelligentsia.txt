@@ -180,12 +180,45 @@ je_intelligentsia_equal = {
 	}
 
 	on_complete = {
-			trigger_event = { id = intelligentsia.4}
+		trigger_event = { id = intelligentsia.4}
+		add_journal_entry = {
+			type = je_intelligentsia_university
+		}
+	}
+}
+
+je_intelligentsia_university = {
+	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/generic_icons/innovation.dds"
+
+	immediate = {
+		ig:ig_intelligentsia = {
+			save_scope_as = intelligentsia_ig
+		}
+	}
+
+	complete = {
+		any_state = {
+			filter = {
+				owner = root
+				is_incorporated = yes
+			}
+			count = all
+			
+			has_building = building_university
+		}
+		custom_tooltip = je_intelligentsia_university.tt
+	}
+
+	on_complete = {
+		trigger_event = { id = intelligentsia.5}
 	}
 }
 
 
-#                    ┌──────────────────────┐
+
+
+#                    ┌──────────────────────┐ outdated
 #                    │                      │
 #                    │  government          │
 #                    │                      │

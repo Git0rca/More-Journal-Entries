@@ -1,6 +1,6 @@
 je_devout_government = {
 	group = je_group_internal_affairs
-	icon = "gfx/interface/icons/ig_icons/intelligensia.dds" #this is a typo in the vanilla game files, i cannot change
+	icon = "gfx/interface/icons/ig_icons/devout.dds" #this is a typo in the vanilla game files, i cannot change
 	
 	progressbar = yes
 	current_value = {
@@ -83,7 +83,7 @@ je_devout_government = {
 #Powerful devout
 je_devout_powerful = {
 	group = je_group_internal_affairs
-	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
+	icon = "gfx/interface/icons/ig_icons/devout.dds"
 
 	immediate = {
 		ig:ig_devout = {
@@ -116,7 +116,7 @@ je_devout_powerful = {
 #Happy devout
 je_devout_happy = {
 	group = je_group_internal_affairs
-	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
+	icon = "gfx/interface/icons/ig_icons/devout.dds"
 
 	immediate = {
 		ig:ig_devout = {

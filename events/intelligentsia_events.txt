@@ -201,7 +201,7 @@ intelligentsia.4 = {#equal
 		custom_tooltip = intelligentsia.4.c.tt
 	}
 	option = {
-		name = intelligentsia.4.d
+		name = intelligentsia.4.de
 		default_option = no
 		trigger = {
 			NOT = {has_technology_researched = feminism}
@@ -211,5 +211,36 @@ intelligentsia.4 = {#equal
 			technology = feminism
 		}
 		custom_tooltip = intelligentsia.4.d.tt
+	}
+}
+
+intelligentsia.5 = {
+	type = country_event
+	placement = root
+	title = intelligentsia.5.t
+	desc = intelligentsia.5.d
+	flavor = intelligentsia.5.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by completing je intelligentsia University
+	}
+
+	option = {
+		name = intelligentsia.5.a
+		default_option = yes
+
+		add_modifier = {
+			name = intelligentsia_5_a_modifier
+		}
 	}
 }

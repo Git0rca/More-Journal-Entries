@@ -27,9 +27,13 @@
   intelligentsia.4.b: "Religion is the true bane of this society."
   intelligentsia.4.c: "What about the Women?!"
   intelligentsia.4.c.tt: "(Possible due to having researched Feminism.)"
-  intelligentsia.4.d: "What about the Women?"
+  intelligentsia.4.de: "What about the Women?"
   intelligentsia.4.c.tt: "(Additional Benefit if triggered after researching Feminism.)"
 
+  intelligentsia.5.t: "The Education Act"
+  intelligentsia.5.d: "With there being a university in every one of our states, we can now guarantee education to all of our people."
+  intelligentsia.5.f: ""
+  intelligentsia.5.a: "Great!"
 
   #journal
   je_intelligentsia_government: "Intelligentsia in Government!" #First Journal Entry cannot have a dynamic name right now
@@ -40,6 +44,8 @@
   je_intelligentsia_happy: "Happy [SCOPE.gsInterestGroup('intelligentsia_ig').GetName]!"
   je_intelligentsia_happy_reason: "To advance, you have to also make the [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] Powerful."
   je_intelligentsia_equal: "A Free and Equal Society"
+  je_intelligentsia_university: "The Eductaion Act"
+  je_intelligentsia_university.tt: "(Of course this refers to only incorporated states you own.)"
 
   #modifiers
   intelligentsia_1_a_modifier: "Prestigious Intelligentsia"
@@ -50,6 +56,7 @@
   intelligentsia_3_b_modifier: "Betrayed their Republican Values"
   intelligentsia_4_a_modifier: "Happy"
   intelligentsia_4_b_modifier: "Took it on with Religion"
+  intelligentsia_5_a_modifier: "Education Act"
 
   #misc
   intelligentsia_pru: "Prussian Military Intelligentsia"
