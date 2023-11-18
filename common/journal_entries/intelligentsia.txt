@@ -1,87 +1,73 @@
-
-je_intelligentsia_init = {
+#Intelligentsia in Government
+je_intelligentsia_1 = {
 	group = je_group_internal_affairs
-
-	is_shown_when_inactive = {
-		NOT = { has_variable = lintelligentsia_init_done }
-		has_technology_researched = democracy
+	
+	progressbar = yes
+	current_value = {
+		value = root.var:je_i_1_var
 	}
-
+	
 	possible = {
 		ig:ig_intelligentsia = {
 			is_marginal = no
+			is_in_government = yes
 		}
 	}
 
-	complete = {
-		ig:ig_intelligentsia = {
-			is_in_government = yes	
-		}
+	is_shown_when_inactive = {
+		NOT = { has_variable = lintelligentsia_1_done }
+		has_technology_researched = democracy
 	}
 
-	on_complete = {
+	immediate = {
 		set_variable = {
 			name = je_i_1_var
 			value = 0
 		}
-		add_journal_entry = {
-			type = je_intelligentsia_1
-		}
-		set_variable = intelligentsia_init_done
 	}
-	
-}
 
-#Intelligentsia in Government
-je_intelligentsia_1 = {
-	group = je_group_internal_affairs
-		
-		progressbar = yes
-		current_value = {
-			value = root.var:je_i_1_var
-		}
-	
-		goal_add_value = {
-			add = 12
-		}
+	goal_add_value = {
+		add = 12
+	}
 
-		on_monthly_pulse = {
-			effect = {
-				if = {
-					limit = {
-						government_legitimacy >= 50
-						ig:ig_intelligentsia = {
-							is_in_government = yes	
-						}
-						NOT = {
-							any_interest_group = {
-								is_insurrectionary = yes
-							}
-						}
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					government_legitimacy >= 50
+					ig:ig_intelligentsia = {
+						is_in_government = yes	
 					}
-					change_variable = {
-						name = je_i_1_var
-						add = 1
+					NOT = {
+						any_interest_group = {
+							is_insurrectionary = yes
+						}
 					}
 				}
-				else = {
-					set_variable = {
-						name = je_i_1_var
-						value = 0
-					}	
+				change_variable = {
+					name = je_i_1_var
+					add = 1
+				}
+			}
+			else = {
+				set_variable = {
+					name = je_i_1_var
+					value = 0
 				}	
-			}
+			}	
 		}
+	}
 
-		complete = {
-			scope:journal_entry = {
-				is_goal_complete = yes
-			}
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
 		}
+	}
 
-	 on_complete = {
-			trigger_event = { id = intelligentsia.1 }
-		}
+	on_complete = {
+		trigger_event = { id = intelligentsia.1 }
+		set_variable = intelligentsia_1_done
+	}
 }
 
 je_intelligentsia_2 = {
