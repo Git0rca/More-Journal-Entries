@@ -28,7 +28,7 @@ intelligentsia.1 = { #government
 		default_option = yes
 
 		add_modifier = {
-			name = intelligentsia_modifier_1_a
+			name = intelligentsia_1_a_modifier
 			months = normal_modifier_time
 		}
 		
@@ -50,7 +50,7 @@ intelligentsia.1 = { #government
 			ROOT = c:PRU
 		}
 		add_modifier = {
-			name = intelligentsia_modifier_1_pru
+			name = intelligentsia_1_pru_modifier
 			months = normal_modifier_time
 		}
 		ig:ig_intelligentsia = {
@@ -88,7 +88,7 @@ intelligentsia.2 = {#powerful
 		default_option = yes
 		ig:ig_intelligentsia = {
 			add_modifier = {
-				name = intelligentsia_modifier_2_a
+				name = intelligentsia_2_a_modifier
 				months = normal_modifier_time
 			}
 		}	
@@ -97,7 +97,7 @@ intelligentsia.2 = {#powerful
 		name = intelligentsia.2.b
 		default_option = no
 		add_modifier = {
-			name = intelligentsia_modifier_2_b
+			name = intelligentsia_2_b_modifier
 			months = normal_modifier_time
 		}
 	}
@@ -138,7 +138,7 @@ intelligentsia.3 = {#happy
 		ig:ig_intelligentsia = {
 			remove_ideology = ideology_republican
 			add_modifier = {
-				name = intelligentsia_modifier_3_b
+				name = intelligentsia_3_b_modifier
 				months = normal_modifier_time
 			}
 			leader = {
@@ -180,15 +180,16 @@ intelligentsia.4 = {#equal
 		default_option = no
 		ig:ig_intelligentsia = {
 			add_modifier = {
-				name = intelligentsia_modifier_4_bc
+				name = intelligentsia_4_b_modifier
 				months = normal_modifier_time
 				is_decaying = yes
 			}
 			leader = {
 				set_ideology = ideology:ideology_atheist #should maybe be a new ideology
 			}
-		}
-	}option = {
+		}		
+	}
+	option = {
 		name = intelligentsia.4.c
 		default_option = no
 		trigger = {
@@ -198,5 +199,17 @@ intelligentsia.4 = {#equal
 			add_ideology = ideology_feminist_ig
 		}
 		custom_tooltip = intelligentsia.4.c.tt
+	}
+	option = {
+		name = intelligentsia.4.d
+		default_option = no
+		trigger = {
+			NOT = {has_technology_researched = feminism}
+		}
+		add_technology_progress = {
+			progress = 3500
+			technology = feminism
+		}
+		custom_tooltip = intelligentsia.4.d.tt
 	}
 }

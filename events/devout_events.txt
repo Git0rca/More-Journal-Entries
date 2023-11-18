@@ -1,0 +1,201 @@
+namespace = devout
+
+devout.1 = { #government
+	type = country_event
+	placement = root
+	title = devout.1.t
+	desc = devout.1.d
+	flavor = devout.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by devout JE Government
+	}
+
+
+	option = {
+		name = devout.1.a
+		default_option = yes
+
+		add_modifier = {
+			name = devout_1_a_modifier
+			months = normal_modifier_time
+		}
+		
+	}
+	option = {
+		name = devout.1.b
+		default_option = no
+
+		add_modifier = {
+			name = devout_1_b_modifier
+			months = normal_modifier_time
+		}
+	}
+}
+ devout.2 = {#powerful
+	type = country_event
+	placement = root
+	title = devout.2.t
+	desc = devout.2.d
+	flavor = devout.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by devout JE Powerful
+	}
+
+
+	option = {
+		name = devout.2.a
+		default_option = yes
+		ig:ig_devout = {
+			add_modifier = {
+				name = devout_2_a_modifier
+				months = normal_modifier_time
+			}
+		}	
+	}
+	option = {
+		name = devout.2.b
+		default_option = no
+		add_loyalists = {
+			religion = root.religion
+			value = 0.1
+		}
+	}
+}
+ devout.3 = {#happy
+	type = country_event
+	placement = root
+	title = devout.3.t
+	desc = devout.3.d
+	flavor = devout.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by devout JE Happy
+	}
+
+
+	option = {
+		name = devout.3.a
+		default_option = yes
+		ig:ig_devout = {
+			add_modifier = {
+				name = devout_3_a_modifier
+				months = long_modifier_time
+			}
+			add_modifier = {
+				name = devout_3_a2_modifier
+			}
+		}
+	}
+	option = {
+		name = devout.3.b
+		default_option = no
+		trigger = {
+			OR = {
+				has_law = law_type:law_slave_trade
+				has_law = law_type:law_legacy_slavery
+			}
+		}
+		ig:ig_devout = {
+			remove_ideology = ideology_anti_slavery
+			add_ideology = ideology_pro_slavery
+			add_modifier = {
+				name = devout_3_b_modifier
+				months = long_modifier_time
+				is_decaying = yes
+			}
+			if = {
+				limit = {
+					is_interest_group_type = ig_devout
+					leader = {
+						has_ideology = ideology:ideology_abolitionist
+					}
+				}
+				leader = {
+					set_ideology = ideology:ideology_moderate
+				}
+			}
+		}		
+	}
+}
+ devout.4 = {#equal
+	type = country_event
+	placement = root
+	title = devout.4.t
+	desc = devout.4.d
+	flavor = devout.4.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by completing je devout Equal
+	}
+
+
+	option = {
+		name = devout.4.a
+		default_option = yes
+		ig:ig_devout = {
+			add_modifier = {
+				name = devout_4_a_modifier
+				months = normal_modifier_time
+			}
+		}
+	}
+	option = {
+		name = devout.4.b
+		default_option = no
+		ig:ig_devout = {
+			leader = {
+				set_ideology = ideology:ideology_theocrat
+			}
+			remove_ideology = ideology_moralist
+			add_ideology = ideology_heavenly_kingdom_theocratic #should definitely be either a new ideology or reskinned
+			set_interest_group_name = devout_radical
+		}
+		add_radicals = {
+			value = 1
+			pop_type = clergymen
+			religion = root.religion
+		}
+	}
+}

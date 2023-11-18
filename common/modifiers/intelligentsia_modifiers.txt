@@ -1,27 +1,27 @@
-intelligentsia_modifier_1_a = {
+intelligentsia_1_a_modifier = {
 	country_prestige_mult = 0.10
 }
-intelligentsia_modifier_1_b = {
+intelligentsia_1_b_modifier = {
 	country_weekly_innovation_mult = 0.10
 }
-intelligentsia_modifier_1_pru = {
+intelligentsia_1_pru_modifier = {
 	country_military_tech_research_speed_mult = 0.20
 }
 
-intelligentsia_modifier_2_a = {
+intelligentsia_2_a_modifier = {
 	interest_group_pop_attraction_mult = 0.10
 }
-intelligentsia_modifier_2_b = {
+intelligentsia_2_b_modifier = {
 	state_migration_pull_add = 10
 }
 
-intelligentsia_modifier_3_b = {
+intelligentsia_3_b_modifier = {
 	interest_group_pop_attraction_mult = -0.05
 }
 
-intelligentsia_modifier_4_a = {
+intelligentsia_4_a_modifier = {
 	ig_approval = 2
 }
-intelligentsia_modifier_4_bc = {
+intelligentsia_4_b_modifier = {
 	interest_group_pop_attraction_mult = -0.20
 }

@@ -1,0 +1,47 @@
+﻿l_english:
+  #events
+  devout.1.t: "[SCOPE.gsInterestGroup('devout_ig').GetName] in Government."
+  devout.1.d: "The [SCOPE.gsInterestGroup('devout_ig').GetName] are in Government."
+  devout.1.f: "Deus Vult."
+  devout.1.a: "Let them focus on converting heathens and heretics."
+  devout.1.b: "They could tell the people to get more children."
+
+  devout.2.t: "The [SCOPE.gsInterestGroup('devout_ig').GetName] are Powerful."
+  devout.2.d: "To advance this Journal Chain, you will have to make them Happy as well."
+  devout.2.f: "The [SCOPE.gsInterestGroup('devout_ig').GetName] are Powerful."
+  devout.2.a: "This will surely make them more popular."
+  devout.2.b: "This will surely make the faithful more loyal."
+
+  devout.3.t: "The [SCOPE.gsInterestGroup('devout_ig').GetName] are Happy."
+  devout.3.d: "To advance this Journal Chain, you will have to make them Powerful as well."
+  devout.3.f: "The [SCOPE.gsInterestGroup('devout_ig').GetName] are Happy."
+  devout.3.a: "People will flock towards a happy church."
+  devout.3.b: "Happy enough to endorse the Slave Trade?"
+
+  devout.4.t: "What now?"
+  devout.4.d: "The [SCOPE.gsInterestGroup('devout_ig').GetName] are Happy and Powerful."
+  devout.4.f: "The [SCOPE.gsInterestGroup('devout_ig').GetName] have completed their goal of creating a devout society. What should they push for next?"
+  devout.4.a: "They are content now."
+  devout.4.b: "NOT DEVOUT ENOUGH!"
+
+  #journal
+  je_devout_government: "Devout in Government!" #First Journal Entry cannot have a dynamic name right now
+  je_devout_government_reason: "The [SCOPE.gsInterestGroup('devout_ig').GetName] recently came to power, yet they still have to prove, that they can govern effectively."
+  je_devout_government_goal: "The [SCOPE.gsInterestGroup('devout_ig').GetName] has been part of a government with 50 or more legitimacy for at least 12 consecutive months."
+  je_devout_powerful: "Powerful [SCOPE.gsInterestGroup('devout_ig').GetName]!"
+  je_devout_powerful_reason: "To advance, you have to also make the [SCOPE.gsInterestGroup('devout_ig').GetName] Happy."
+  je_devout_happy: "Happy [SCOPE.gsInterestGroup('devout_ig').GetName]!"
+  je_devout_happy_reason: "To advance, you have to also make the [SCOPE.gsInterestGroup('devout_ig').GetName] Powerful."
+  je_devout_society: "A Devout Society"
+
+  #modifiers
+  devout_1_a_modifier: "Focus on conversion"
+  devout_1_b_modifier: "Focus on encouraging children"
+  devout_2_a_modifier: "Popular Clergy"
+  devout_3_a_modifier: "Church Boom!"
+  devout_3_a2_modifier: "Pious Institution."
+  devout_3_b_modifier: "Strongarmed into a compromise"
+  devout_4_a_modifier: "Happy Church"
+
+  #misc
+  devout_radical: "Radical Clergy"

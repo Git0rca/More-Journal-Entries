@@ -1,0 +1,174 @@
+je_devout_government = {
+	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ig_icons/intelligensia.dds" #this is a typo in the vanilla game files, i cannot change
+	
+	progressbar = yes
+	current_value = {
+		value = root.var:je_devout_1_var
+	}
+	
+	possible = {
+		ig:ig_devout = {
+			is_marginal = no
+			is_in_government = yes
+		}
+	}
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = devout_government_done }
+		has_technology_researched = democracy
+	}
+
+	immediate = {
+		set_variable = {
+			name = je_devout_1_var
+			value = 0
+		}
+		ig:ig_devout = {
+			save_scope_as = devout_ig
+		}
+	}
+
+	goal_add_value = {
+		add = 12
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					government_legitimacy >= 50
+					ig:ig_devout = {
+						is_in_government = yes	
+					}
+					NOT = {
+						any_interest_group = {
+							is_insurrectionary = yes
+						}
+					}
+				}
+				change_variable = {
+					name = je_devout_1_var
+					add = 1
+				}
+			}
+			else = {
+				set_variable = {
+					name = je_devout_1_var
+					value = 0
+				}	
+			}	
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = devout.1 }
+		set_variable = devout_government_done
+		
+		add_journal_entry = {
+			type = je_devout_powerful
+		}
+		add_journal_entry = {
+			type = je_devout_happy
+		}
+	}
+}
+
+#Powerful devout
+je_devout_powerful = {
+	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
+
+	immediate = {
+		ig:ig_devout = {
+			save_scope_as = devout_ig
+		}
+	}
+
+	complete = {
+		ig:ig_devout = {
+			ig_clout >= 0.15
+			is_in_government = yes	
+		}
+		government_legitimacy >= 50
+	}
+
+	on_complete = {
+		set_variable = devout_2a_done
+		trigger_event = { id = devout.2}
+		if = {
+			limit = {
+				has_variable = devout_2b_done
+			}
+			add_journal_entry = {
+				type = je_devout_society
+			}
+		}
+	}
+}
+
+#Happy devout
+je_devout_happy = {
+	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
+
+	immediate = {
+		ig:ig_devout = {
+			save_scope_as = devout_ig
+		}
+	}
+
+	complete = {
+		ig:ig_devout = {
+			is_in_government = yes
+			ig_approval >= 15
+		}
+		government_legitimacy >= 50
+	}
+
+	on_complete = {
+		set_variable = devout_2b_done
+		trigger_event = { id = devout.3}
+
+		if = {
+			limit = {
+				has_variable = devout_2a_done
+			}
+			add_journal_entry = {
+				type = je_devout_society
+			}
+		}
+	}
+}
+
+je_devout_society = {
+	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ideology_icons/moralist.dds"
+
+	immediate = {
+		ig:ig_devout = {
+			save_scope_as = devout_ig
+		}
+	}
+
+	complete = {
+		has_law = law_type:law_state_religion
+		has_law = law_type:law_charitable_health_system
+		has_law = law_type:law_religious_schools
+	
+		ig:ig_devout = {
+			is_in_government = yes
+		}
+		government_legitimacy >= 50
+	}
+
+	on_complete = {
+		trigger_event = { id = devout.4}
+	}
+}

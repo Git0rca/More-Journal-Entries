@@ -1,6 +1,7 @@
 #Intelligentsia in Government
 je_intelligentsia_government = {
 	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ig_icons/intelligensia.dds" #this is a typo in the vanilla game files, i cannot change
 	
 	progressbar = yes
 	current_value = {
@@ -15,7 +16,7 @@ je_intelligentsia_government = {
 	}
 
 	is_shown_when_inactive = {
-		NOT = { has_variable = lintelligentsia_1_done }
+		NOT = { has_variable = intelligentsia_government_done }
 		has_technology_researched = democracy
 	}
 
@@ -23,6 +24,9 @@ je_intelligentsia_government = {
 		set_variable = {
 			name = je_i_1_var
 			value = 0
+		}
+		ig:ig_intelligentsia = {
+			save_scope_as = intelligentsia_ig
 		}
 	}
 
@@ -46,7 +50,7 @@ je_intelligentsia_government = {
 				}
 				change_variable = {
 					name = je_i_1_var
-					add = 1
+					add = 11
 				}
 			}
 			else = {
@@ -80,32 +84,46 @@ je_intelligentsia_government = {
 #Powerful Intelligentsia
 je_intelligentsia_powerful = {
 	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
 
-		complete = {
-			ig:ig_intelligentsia = {
-				ig_clout >= 0.15
-				is_in_government = yes	
-			}
-			government_legitimacy >= 50
+	immediate = {
+		ig:ig_intelligentsia = {
+			save_scope_as = intelligentsia_ig
 		}
+	}
 
-	 on_complete = {
-			set_variable = intelligentsia_2a_done
-			trigger_event = { id = intelligentsia.2}
-			if = {
-				limit = {
-					has_variable = intelligentsia_2b_done
-				}
-				add_journal_entry = {
-					type = je_intelligentsia_equal
-				}
+	complete = {
+		ig:ig_intelligentsia = {
+			ig_clout >= 0.15
+			is_in_government = yes	
+		}
+		government_legitimacy >= 50
+	}
+
+	on_complete = {
+		set_variable = intelligentsia_2a_done
+		trigger_event = { id = intelligentsia.2}
+		if = {
+			limit = {
+				has_variable = intelligentsia_2b_done
+			}
+			add_journal_entry = {
+				type = je_intelligentsia_equal
 			}
 		}
+	}
 }
 
 #Happy Intelligentsia
 je_intelligentsia_happy = {
 	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
+
+	immediate = {
+		ig:ig_intelligentsia = {
+			save_scope_as = intelligentsia_ig
+		}
+	}
 
 	complete = {
 		ig:ig_intelligentsia = {
@@ -132,6 +150,14 @@ je_intelligentsia_happy = {
 
 je_intelligentsia_equal = {
 	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ideology_icons/abolitionist.dds"
+
+	immediate = {
+		ig:ig_intelligentsia = {
+			save_scope_as = intelligentsia_ig
+		}
+	}
+
 	complete = {
 		OR = {
 			has_law = law_type:law_census_voting

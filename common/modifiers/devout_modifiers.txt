@@ -1,0 +1,25 @@
+devout_1_a_modifier = {
+	state_conversion_mult = 0.20
+}
+devout_1_b_modifier = {
+	state_birth_rate_mult = 0.015
+}
+
+devout_2_a_modifier = {
+	interest_group_pop_attraction_mult = 0.10
+}
+
+devout_3_a_modifier = {
+	interest_group_pop_attraction_mult = 0.4
+}
+devout_3_a2_modifier= {
+	interest_group_pop_attraction_mult = 0.1
+}
+devout_3_b_modifier = {
+	interest_group_pop_attraction_mult = -0.5
+	interest_group_approval_add = -10
+}
+
+devout_4_a_modifier = {
+	ig_approval = 2
+}
