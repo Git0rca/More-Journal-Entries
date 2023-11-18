@@ -87,7 +87,6 @@ je_intelligentsia_2 = {
 		}
 
 	 on_complete = {
-			set_variable = intelligentsia_1_done
 			trigger_event = { id = intelligentsia.2 }
 		}
 }
