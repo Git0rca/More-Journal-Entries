@@ -5,9 +5,38 @@
   intelligentsia.1.f: "Intelligentsia in Government."
   intelligentsia.1.a: "Let them focus on increasing our prestige."
   intelligentsia.1.b: "Focus on our research."
+  intelligentsia.1.pru: "Militarize the Intelligentisa."
+  intelligentsia.1.pru.tt: "(Possible due to playing as Prussia.)"
+
+  intelligentsia.2.t: "The Intelligentsia are Powerful."
+  intelligentsia.2.d: "To advance this Journal Chain, you will have to make them Happy as well."
+  intelligentsia.2.f: "The Intelligentsia are Powerful."
+  intelligentsia.2.a: "This will surely make them more attractive."
+  intelligentsia.2.b: "This will surely make us more attractive."
+
+  intelligentsia.3.t: "The Intelligentsia are Happy."
+  intelligentsia.3.d: "To advance this Journal Chain, you will have to make them Powerful as well."
+  intelligentsia.3.f: "The Intelligentsia are Happy."
+  intelligentsia.3.a: "Good."
+  intelligentsia.3.b: "Happy enough to endorse the Monarchy?"
+
+  intelligentsia.4.t: "What now?"
+  intelligentsia.4.d: "The Intelligentsia are Happy and Powerful."
+  intelligentsia.4.f: "The Intelligentsia have completed their goal of creating a free and equal society. What should they push for next?"
+  intelligentsia.4.a: "They are happy now."
+  intelligentsia.4.b: "Religion is the true bane of this society."
+  intelligentsia.4.c: "What about the Women?"
+  intelligentsia.4.c.tt: "(Possible due to having researched Feminism.)"
 
   #journal
-  je_intelligentsia_1: "Intelligentsia in Government!"
-  je_intelligentsia_1_reason: "The Intelligentsia recently came to power, yet they still have to prove, that they can govern effectively."
-  je_intelligentsia_1_goal: "The Intelligentsia has been part of a government with 50 or more legitimacy for at least 12 consecutive months."
-  je_intelligentsia_2: "Second Entry!"
+  je_intelligentsia_government: "Intelligentsia in Government!"
+  je_intelligentsia_government_reason: "The Intelligentsia recently came to power, yet they still have to prove, that they can govern effectively."
+  je_intelligentsia_government_goal: "The Intelligentsia has been part of a government with 50 or more legitimacy for at least 12 consecutive months."
+  je_intelligentsia_powerful: "Powerful Intelligentsia!"
+  je_intelligentsia_powerful_reason: "To advance, you have to also make the Intelligentsia Happy."
+  je_intelligentsia_happy: "Happy Intelligentsia!"
+  je_intelligentsia_happy_reason: "To advance, you have to also make the Intelligentsia Powerful."
+  je_intelligentsia_equal: "A Free and Equal Society"
+
+  #misc
+  intelligentsia_pru: "Prussian Military Intelligentsia"

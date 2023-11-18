@@ -1,7 +1,7 @@
 namespace = intelligentsia
 
 #Intelligentsia in Government: Completion
-intelligentsia.1 = {
+intelligentsia.1 = { #government
 	type = country_event
 	placement = root
 	title = intelligentsia.1.t
@@ -19,7 +19,7 @@ intelligentsia.1 = {
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
 
 	trigger = {
-		# triggered by intelligentsia JE 1
+		# triggered by intelligentsia JE Government
 	}
 
 
@@ -32,26 +32,36 @@ intelligentsia.1 = {
 			months = normal_modifier_time
 		}
 		
-		add_journal_entry = {
-			type = je_intelligentsia_2
-		}
 	}
 	option = {
 		name = intelligentsia.1.b
 		default_option = no
 
 		add_modifier = {
-			name = intelligentsia_modifier_1_b
+			name = intelligentsia_1_b
 			months = normal_modifier_time
 		}
+	}
+	option = { #Prussia Option
+		name = intelligentsia.1.pru
+		default_option = no
 
-		add_journal_entry = {
-			type = je_intelligentsia_2
+		trigger = {
+			ROOT = c:PRU
 		}
+		add_modifier = {
+			name = intelligentsia_modifier_1_pru
+			months = normal_modifier_time
+		}
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_jingoist
+			set_interest_group_name = intelligentsia_pru
+		}
+		custom_tooltip = intelligentsia.1.pru.tt
 	}
 }
 
-intelligentsia.2 = {
+intelligentsia.2 = {#powerful
 	type = country_event
 	placement = root
 	title = intelligentsia.2.t
@@ -69,24 +79,124 @@ intelligentsia.2 = {
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
 
 	trigger = {
-		# triggered by intelligentsia JE 2
+		# triggered by intelligentsia JE Powerful
 	}
 
 
 	option = {
 		name = intelligentsia.2.a
 		default_option = yes
-
-		add_journal_entry = {
-			type = je_intelligentsia_3 #not yet created
-		}
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = intelligentsia_modifier_2_a
+				months = normal_modifier_time
+			}
+		}	
 	}
 	option = {
-		name = intelligentsia.1.b
+		name = intelligentsia.2.b
 		default_option = no
-
-		add_journal_entry = {
-			type = je_intelligentsia_3 #not yet created
+		add_modifier = {
+			name = intelligentsia_modifier_2_b
+			months = normal_modifier_time
 		}
+	}
+}
+
+intelligentsia.3 = {#happy
+	type = country_event
+	placement = root
+	title = intelligentsia.3.t
+	desc = intelligentsia.3.d
+	flavor = intelligentsia.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by intelligentsia JE Happy
+	}
+
+
+	option = {
+		name = intelligentsia.3.a
+		default_option = yes
+	}
+	option = {
+		name = intelligentsia.3.b
+		default_option = no
+		trigger = {
+			has_law = law_type:law_monarchy
+		}
+		ig:ig_intelligentsia = {
+			remove_ideology = ideology_republican
+			add_modifier = {
+				name = intelligentsia_modifier_3_b
+				months = normal_modifier_time
+			}
+			leader = {
+				set_ideology = ideology:ideology_royalist
+			}
+		}
+		
+	}
+}
+
+intelligentsia.4 = {#equal
+	type = country_event
+	placement = root
+	title = intelligentsia.4.t
+	desc = intelligentsia.4.d
+	flavor = intelligentsia.4.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by completing je intelligentsia Equal
+	}
+
+
+	option = {
+		name = intelligentsia.4.a
+		default_option = yes
+	}
+	option = {
+		name = intelligentsia.4.b
+		default_option = no
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = intelligentsia_modifier_4_bc
+				months = normal_modifier_time
+				is_decaying = yes
+			}
+			leader = {
+				set_ideology = ideology:ideology_atheist #should maybe be a new ideology
+			}
+		}
+	}option = {
+		name = intelligentsia.4.c
+		default_option = no
+		trigger = {
+			has_technology_researched = feminism
+		}
+		ig:ig_intelligentsia = {
+			add_ideology = ideology_feminist_ig
+		}
+		custom_tooltip = intelligentsia.4.c.tt
 	}
 }

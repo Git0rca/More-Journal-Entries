@@ -1,5 +1,5 @@
 #Intelligentsia in Government
-je_intelligentsia_1 = {
+je_intelligentsia_government = {
 	group = je_group_internal_affairs
 	
 	progressbar = yes
@@ -66,27 +66,94 @@ je_intelligentsia_1 = {
 
 	on_complete = {
 		trigger_event = { id = intelligentsia.1 }
-		set_variable = intelligentsia_1_done
+		set_variable = intelligentsia_government_done
+		
+		add_journal_entry = {
+			type = je_intelligentsia_powerful
+		}
+		add_journal_entry = {
+			type = je_intelligentsia_happy
+		}
 	}
 }
 
-je_intelligentsia_2 = {
+#Powerful Intelligentsia
+je_intelligentsia_powerful = {
 	group = je_group_internal_affairs
 
 		complete = {
-			government_legitimacy >= 50
 			ig:ig_intelligentsia = {
+				ig_clout >= 0.15
 				is_in_government = yes	
 			}
-			is_at_war = no
-			NOT = {
-				any_interest_group = {
-					is_insurrectionary = yes
-				}
-			}
+			government_legitimacy >= 50
 		}
 
 	 on_complete = {
-			trigger_event = { id = intelligentsia.2 }
+			set_variable = intelligentsia_2a_done
+			trigger_event = { id = intelligentsia.2}
+			if = {
+				limit = {
+					has_variable = intelligentsia_2b_done
+				}
+				add_journal_entry = {
+					type = je_intelligentsia_equal
+				}
+			}
 		}
+}
+
+#Happy Intelligentsia
+je_intelligentsia_happy = {
+	group = je_group_internal_affairs
+
+	complete = {
+		ig:ig_intelligentsia = {
+			is_in_government = yes
+			ig_approval >= 15
+		}
+		government_legitimacy >= 50
+	}
+
+	on_complete = {
+		set_variable = intelligentsia_2b_done
+		trigger_event = { id = intelligentsia.3}
+
+		if = {
+			limit = {
+				has_variable = intelligentsia_2a_done
+			}
+			add_journal_entry = {
+				type = je_intelligentsia_equal
+			}
+		}
+	}
+}
+
+je_intelligentsia_equal = {
+	group = je_group_internal_affairs
+	complete = {
+		OR = {
+			has_law = law_type:law_census_voting
+			has_law = law_type:law_universal_suffrage
+		}
+		OR = {
+			has_law = law_type:law_right_of_assembly
+			has_law = law_type:law_protected_speech
+		}
+		OR = {
+			has_law = law_type:law_freedom_of_conscience
+			has_law = law_type:law_total_separation
+		}
+		has_law = law_type:law_slavery_banned
+		NOT = {has_law = law_type:law_serfdom}		
+		ig:ig_intelligentsia = {
+			is_in_government = yes
+		}
+		government_legitimacy >= 50
+	}
+
+	on_complete = {
+			trigger_event = { id = intelligentsia.4}
+	}
 }

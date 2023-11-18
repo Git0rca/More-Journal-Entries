@@ -1,7 +1,27 @@
 intelligentsia_modifier_1_a = {
 	country_prestige_mult = 0.10
 }
-
 intelligentsia_modifier_1_b = {
 	country_weekly_innovation_mult = 0.10
+}
+intelligentsia_modifier_1_pru = {
+	country_military_tech_research_speed_mult = 0.20
+}
+
+intelligentsia_modifier_2_a = {
+	interest_group_pop_attraction_mult = 0.10
+}
+intelligentsia_modifier_2_b = {
+	state_migration_pull_add = 10
+}
+
+intelligentsia_modifier_3_b = {
+	interest_group_pop_attraction_mult = -0.05
+}
+
+intelligentsia_modifier_4_a = {
+	ig_approval = 2
+}
+intelligentsia_modifier_4_bc = {
+	interest_group_pop_attraction_mult = -0.20
 }
