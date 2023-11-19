@@ -1,3 +1,5 @@
+#for coalitions to works please remind to set igkey_coalition variables!
+
 je_intelligentsia_industrialists_coalition = {
 	group = je_group_internal_affairs
 	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
