@@ -149,7 +149,8 @@ devout.1 = { #government
 		}		
 	}
 }
- devout.4 = {#equal
+
+devout.4 = {
 	type = country_event
 	placement = root
 	title = devout.4.t
@@ -167,7 +168,7 @@ devout.1 = { #government
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
 
 	trigger = {
-		# triggered by completing je devout Equal
+		# triggered by completing je devout society
 	}
 
 
@@ -193,6 +194,71 @@ devout.1 = { #government
 			set_interest_group_name = devout_radical
 		}
 		add_radicals = {
+			value = 1
+			pop_type = clergymen
+			religion = root.religion
+		}
+		add_journal_entry = {
+			type = je_devout_theocracy
+		}
+	}
+}
+
+devout.5 = {
+	type = country_event
+	placement = root
+	title = devout.5.t
+	desc = devout.5.d
+	flavor = devout.5.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		# triggered by completing je devout theocracy
+	}
+
+
+	option = {
+		name = devout.5.a
+		default_option = yes
+		add_modifier = {
+			name = devout_5_a_modifier
+			months = long_modifier_time
+			is_decaying = yes
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = devout_5_modifier
+			}
+		}
+		add_loyalists = {
+			value = 1
+			pop_type = clergymen
+			religion = root.religion
+		}
+	}
+	option = {
+		name = devout.5.b
+		default_option = no
+
+		add_modifier = {
+			name = devout_5_b_modifier
+		}
+		ig:ig_devout = {
+			add_ideology = ideology_jingoist
+			add_modifier = {
+				name = devout_5_modifier
+			}
+		}
+		add_loyalists = {
 			value = 1
 			pop_type = clergymen
 			religion = root.religion

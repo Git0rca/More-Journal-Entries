@@ -24,6 +24,12 @@
   devout.4.a: "They are content now."
   devout.4.b: "NOT DEVOUT ENOUGH!"
 
+  devout.5.t: "Holy State"
+  devout.5.d: "We can only prosper from now on. A State in the image of God has been created."
+  devout.5.f: ""
+  devout.5.a: "Create more of God's children!"
+  devout.5.b: "Create more of God's soldiers!"
+
   #journal
   je_devout_government: "Devout in Government!" #First Journal Entry cannot have a dynamic name right now
   je_devout_government_reason: "The [SCOPE.gsInterestGroup('devout_ig').GetName] recently came to power, yet they still have to prove, that they can govern effectively."
@@ -42,6 +48,9 @@
   devout_3_a2_modifier: "Pious Institution."
   devout_3_b_modifier: "Strongarmed into a compromise"
   devout_4_a_modifier: "Happy Church"
+  devout_5_modifier: "Created the Holy State"
+  devout_5_a_modifier: "Encouraged Childbirth"
+  devout_5_b_modifier: "The Holy War Act"
 
   #misc
   devout_radical: "Radical Clergy"

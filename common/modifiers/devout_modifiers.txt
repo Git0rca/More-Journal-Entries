@@ -21,5 +21,17 @@ devout_3_b_modifier = {
 }
 
 devout_4_a_modifier = {
-	ig_approval = 2
+	interest_group_approval_add  = 2
+}
+
+devout_5_modifier = {
+	interest_group_pol_str_mult = 0.5
+	interest_group_pop_attraction_mult = 1
+}
+devout_5_a_modifier = {
+	state_birth_rate_mult = 0.30
+}
+devout_5_b_modifier = {
+	unit_army_offense_mult = 0.10
+	state_conscription_rate_mult = 0.2
 }

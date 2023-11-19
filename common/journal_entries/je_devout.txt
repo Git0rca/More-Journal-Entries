@@ -172,3 +172,27 @@ je_devout_society = {
 		trigger_event = { id = devout.4}
 	}
 }
+
+je_devout_theocracy = {
+	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ig_icons/devout.dds"
+
+	immediate = {
+		ig:ig_devout = {
+			save_scope_as = devout_ig
+		}
+	}
+	complete = {
+		has_law = law_type:law_state_religion
+		has_law = law_type:law_theocracy
+	
+		ig:ig_devout = {
+			is_in_government = yes
+		}
+		government_legitimacy >= 50
+	}
+	on_complete = {
+		trigger_event = { id = devout.5}
+	}
+
+}
