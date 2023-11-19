@@ -1,0 +1,21 @@
+Journal Entries:
+	Journal Entries should be prefixed with "je_"
+
+Events:
+	Events should have a name and a number: example.1
+	Title, Description and Flavortext should then be named like this:
+		title = event.1.t
+		desc = event.1.d
+		flavor = event.1.f
+	Different Options should then be named like this:
+		event.1.a
+		event.1.b
+		event.1.c
+	If you need more than 3 options this creates the problem of overlapping with the Description. In that case use:
+		event.1.de
+		event.1.ef
+		event.1.te #an event should probably to go up to the letter t
+	You may also exchange the letters for something the option is or does, if possible: e. g. event.1.pru for an option that can only be picked by Prussia
+
+Modifiers:
+	Modifiers have to end in "_modifier" else the localization won't work
