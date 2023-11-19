@@ -210,7 +210,7 @@ intelligentsia.4 = {#equal
 			progress = 3500
 			technology = feminism
 		}
-		custom_tooltip = intelligentsia.4.d.tt
+		custom_tooltip = intelligentsia.4.de.tt
 	}
 }
 
@@ -244,3 +244,4 @@ intelligentsia.5 = {
 		}
 	}
 }
+

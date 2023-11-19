@@ -50,7 +50,7 @@ je_intelligentsia_government = {
 				}
 				change_variable = {
 					name = je_i_1_var
-					add = 11
+					add = 1
 				}
 			}
 			else = {
@@ -156,6 +156,9 @@ je_intelligentsia_equal = {
 		ig:ig_intelligentsia = {
 			save_scope_as = intelligentsia_ig
 		}
+		ig:ig_industrialists = {
+			save_scope_as = industrialists_ig
+		}
 	}
 
 	complete = {
@@ -184,6 +187,7 @@ je_intelligentsia_equal = {
 		add_journal_entry = {
 			type = je_intelligentsia_university
 		}
+		set_variable = intelligentsia_coalition
 	}
 }
 
@@ -214,34 +218,3 @@ je_intelligentsia_university = {
 		trigger_event = { id = intelligentsia.5}
 	}
 }
-
-
-
-
-#                    ┌──────────────────────┐ outdated
-#                    │                      │
-#                    │  government          │
-#                    │                      │
-#                    │                      │
-#                    └────┬───────────┬─────┘
-#                         │           │
-#                         │           │
-#                         │           │
-#                         │           │
-# ┌────────────────┐      │           │       ┌─────────────────┐
-# │powerful        │      │           │       │                 │
-# │                │◄─────┘           └──────►│ happy           │
-# └────────┬───────┘                          └─────────┬───────┘
-#          │                                            │
-#          │                                            │
-#          │                                            │
-#          │                                            │
-#          │                                            │
-#          │                                            │
-#          │                                            │
-#          │                                            │
-#          │          ┌──────────────────────┐          │
-#          │          │                      │          │
-#          └─────────►│  equal               │◄─────────┘
-#                     │                      │
-#                     └──────────────────────┘

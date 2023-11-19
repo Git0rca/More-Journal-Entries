@@ -1,0 +1,160 @@
+je_intelligentsia_industrialists_coalition = {
+	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
+	progressbar = yes
+
+	possible = {
+		ig:ig_intelligentsia = {
+			is_in_government = yes
+		}
+		ig:ig_industrialists = {
+			is_in_government = yes
+		}
+		has_variable = intelligentsia_coalition
+		has_variable = industrialist_coalition
+	}
+	is_shown_when_inactive = {
+		has_variable = intelligentsia_coalition
+		has_variable = industrialist_coalition
+	}
+	immediate = {
+		ig:ig_intelligentsia = {
+			save_scope_as = intelligentsia_ig
+		}
+		ig:ig_industrialists = {
+			save_scope_as = industrialists_ig
+		}
+		set_variable = {
+			name = je_intelligentsia_industrialists_coalition_var
+			value = 0
+		}
+	}
+	current_value = {
+		value = root.var:je_intelligentsia_industrialists_coalition_var
+	}
+	goal_add_value = {
+		add = 200
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					government_legitimacy >= 50
+					ig:ig_intelligentsia = {
+						is_in_government = yes
+					}
+					ig:ig_industrialists = {
+						is_in_government = yes
+					}
+				}
+				change_variable = {
+					name = je_intelligentsia_industrialists_coalition_var
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					government_legitimacy >= 75
+					ig:ig_intelligentsia = {
+						is_in_government = yes
+					}
+					ig:ig_industrialists = {
+						is_in_government = yes
+					}
+				}
+				change_variable = {
+					name = je_intelligentsia_industrialists_coalition_var
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					government_legitimacy >= 90
+					ig:ig_intelligentsia = {
+						is_in_government = yes
+					}
+					ig:ig_industrialists = {
+						is_in_government = yes
+					}
+				}
+				change_variable = {
+					name = je_intelligentsia_industrialists_coalition_var
+					add = 2
+				}
+			}
+			if = {
+				limit = {					
+					ig:ig_intelligentsia = {
+						is_in_government = yes
+						ig_approval >= 10 
+					}
+					ig:ig_industrialists = {
+						is_in_government = yes
+						ig_approval >= 10 
+					}
+				}
+				change_variable = {
+					name = je_intelligentsia_industrialists_coalition_var
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							ig:ig_intelligentsia = {
+								is_in_government = yes
+							}
+						}
+						NOT = {
+							ig:ig_industrialists = {
+								is_in_government = yes
+							}
+						}
+					}
+				}
+				change_variable = {
+					name = je_intelligentsia_industrialists_coalition_var
+					add = -5
+				}
+			}
+			if = {
+				limit = {
+					ig:ig_intelligentsia = {
+						is_in_government = yes
+					}
+					ig:ig_industrialists = {
+						is_in_government = yes
+					}
+					government_legitimacy <= 50
+				}
+				change_variable = {
+					name = je_intelligentsia_industrialists_coalition_var
+					add = -5
+				}
+			}
+			if = {
+				limit = {
+					root.var:je_intelligentsia_industrialists_coalition_var < 0
+				}
+				set_variable = {
+					name = je_intelligentsia_industrialists_coalition_var
+					value = 0
+				}
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = coalition.intelligentsia.idustrialists.1
+		}
+	}
+}

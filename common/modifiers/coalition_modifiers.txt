@@ -1,0 +1,6 @@
+coalition_intelligentsia_industrialist_1_a_modifier = {
+	interest_group_pol_str_mult = 0.1
+}
+coalition_intelligentsia_industrialist_1_a2_modifier = {
+	state_pop_qualifications_mult = 0.15
+}

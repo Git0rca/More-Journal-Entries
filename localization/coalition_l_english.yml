@@ -1,0 +1,18 @@
+﻿l_english:
+  #events
+  coalition.intelligentsia.idustrialists.1.t: "Fruitful Coaltion!"
+  coalition.intelligentsia.idustrialists.1.d: "The [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] and the [SCOPE.gsInterestGroup('industrialists_ig').GetName] have proven, that they can govern together effectively, maybe they could learn a few things from each other..."
+  coalition.intelligentsia.idustrialists.1.f: "Fruitful Coaltion!"
+
+  coalition.intelligentsia.idustrialists.1.a: "A coalition doesnt mean they have to influence each other. Work together on creating a pragmatic education system instead!"
+  coalition.intelligentsia.idustrialists.1.b: "The [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] can sure learn the ways of capitalism."
+  coalition.intelligentsia.idustrialists.1.c: "The [SCOPE.gsInterestGroup('industrialists_ig').GetName] might become a bit more liberal."
+
+  #journal entries
+  je_intelligentsia_industrialists_coalition: "A coalition between the [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] and the [SCOPE.gsInterestGroup('industrialists_ig').GetName]."
+  je_intelligentsia_industrialists_coalition_reason: "Secure a fruitful and lasting coalition between the [SCOPE.gsInterestGroup('industrialists_ig').GetName] and the [SCOPE.gsInterestGroup('intelligentsia_ig').GetName]. Multiple factors influene the progress, such as approval or legitimacy. Watch out: The progress bar can fall."
+  je_intelligentsia_industrialists_coalition_goal: "The [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] and the [SCOPE.gsInterestGroup('industrialists_ig').GetName] have been in a fruitful coalition for some time"
+
+  #modifiers
+  coalition_intelligentsia_industrialist_1_a_modifier: "Strong Allies in Politics"
+  coalition_intelligentsia_industrialist_1_a2_modifier: "Pragmatic Education System"
