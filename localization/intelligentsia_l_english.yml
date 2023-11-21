@@ -37,7 +37,7 @@
 
   #journal
   je_intelligentsia_government: "Intelligentsia in Government!" #First Journal Entry cannot have a dynamic name right now
-  je_intelligentsia_government_reason: "The [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] recently came to power, yet they still have to prove, that they can govern effectively."
+  je_intelligentsia_government_reason: "The [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] came to power, yet they still have to prove, that they can govern effectively."
   je_intelligentsia_government_goal: "The [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] has been part of a government with 50 or more legitimacy for at least 12 consecutive months."
   je_intelligentsia_powerful: "Powerful [SCOPE.gsInterestGroup('intelligentsia_ig').GetName]!"
   je_intelligentsia_powerful_reason: "To advance, you have to also make the [SCOPE.gsInterestGroup('intelligentsia_ig').GetName] Happy."

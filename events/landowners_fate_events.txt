@@ -1,0 +1,202 @@
+namespace = landowners_fate
+
+landowners_fate.1 = {
+	type = country_event
+	placement = root
+	title = landowners_fate.1.t
+	desc = landowners_fate.1.d
+	flavor = landowners_fate.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	trigger = {
+		# triggered by landowners JE Fate
+	}
+
+
+	option = {
+		name = landowners_fate.1.a
+		default_option = yes
+		
+		custom_tooltip = {
+			text = landowners_fate.add5.tt
+			change_variable = {
+				name = je_landowners_fate_progress
+				add = 5
+			}
+		}
+		add_radicals = {
+			value = 0.25
+			pop_type = aristocrats
+			interest_group = ig:ig_landowners
+		}
+	}
+	option = {
+		name = landowners_fate.1.b
+		default_option = no
+		
+		custom_tooltip = {
+			text = landowners_fate.remove5.tt
+			change_variable = {
+				name = je_landowners_fate_progress
+				add = -5
+			}
+		}
+		add_loyalists = {
+			value = 0.25
+			pop_type = aristocrats
+			interest_group = ig:ig_landowners
+		}
+		if = {
+			limit = {
+				root.var:je_landowners_fate_progress < 0
+			}
+			set_variable = {
+				name = je_landowners_fate_progress
+				value = 0
+			}
+		}
+	}
+}
+
+landowners_fate.2 = {
+	type = country_event
+	placement = root
+	title = landowners_fate.2.t
+	desc = landowners_fate.2.d
+	flavor = landowners_fate.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	trigger = {
+		# triggered by landowners JE Fate
+	}
+
+
+	option = {
+		name = landowners_fate.2.a
+		default_option = yes
+		
+		custom_tooltip = {
+			text = landowners_fate.add10.tt
+			change_variable = {
+				name = je_landowners_fate_progress
+				add = 10
+			}
+		}
+	}
+	option = {
+		name = landowners_fate.2.b
+		default_option = no
+		
+		custom_tooltip = {
+			text = landowners_fate.remove5.tt
+			change_variable = {
+				name = je_landowners_fate_progress
+				add = -5
+			}
+		}
+		ig:ig_landowners = {
+			add_modifier = {
+				name = landowners_fate_2_b_modifier
+				months = normal_modifier_time
+			}
+		}
+		if = {
+			limit = {
+				root.var:je_landowners_fate_progress < 0
+			}
+			set_variable = {
+				name = je_landowners_fate_progress
+				value = 0
+			}
+		}
+	}
+}
+
+landowners_fate.3 = {
+	type = country_event
+	placement = root
+	title = landowners_fate.3.t
+	desc = landowners_fate.3.d
+	flavor = landowners_fate.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	trigger = {
+		# triggered by landowners JE Fate
+	}
+
+	immediate = {
+		ig:ig_landowners = {
+			save_scope_as = landowners_ig
+		}
+	}
+
+	option = {
+		name = landowners_fate.3.a
+		default_option = yes
+		
+		custom_tooltip = {
+			text = landowners_fate.add5.tt
+			change_variable = {
+				name = je_landowners_fate_progress
+				add = 5
+			}
+		}
+		add_radicals = {
+			value = 0.05
+			interest_group = ig:ig_devout
+		}
+
+	}
+	option = {
+		name = landowners_fate.3.a
+		default_option = no
+		
+		custom_tooltip = {
+			text = landowners_fate.remove10.tt
+			change_variable = {
+				name = je_landowners_fate_progress
+				add = -10
+			}
+		}
+		add_loyalists = {
+			value = 0.05
+			interest_group = ig:ig_devout
+		}
+		if = {
+			limit = {
+				root.var:je_landowners_fate_progress < 0
+			}
+			set_variable = {
+				name = je_landowners_fate_progress
+				value = 0
+			}
+		}
+	}
+}

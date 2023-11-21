@@ -1,6 +1,7 @@
 je_devout_government = {
-	group = je_group_internal_affairs
-	icon = "gfx/interface/icons/ig_icons/devout.dds" #this is a typo in the vanilla game files, i cannot change
+	group = je_group_polical_affairs
+	icon = "gfx/interface/icons/ig_icons/devout.dds"
+	can_deactivate = yes
 	
 	progressbar = yes
 	current_value = {
@@ -82,7 +83,7 @@ je_devout_government = {
 
 #Powerful devout
 je_devout_powerful = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/ig_icons/devout.dds"
 
 	immediate = {
@@ -115,7 +116,7 @@ je_devout_powerful = {
 
 #Happy devout
 je_devout_happy = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/ig_icons/devout.dds"
 
 	immediate = {
@@ -148,7 +149,7 @@ je_devout_happy = {
 }
 
 je_devout_society = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/ideology_icons/moralist.dds"
 
 	immediate = {
@@ -174,7 +175,7 @@ je_devout_society = {
 }
 
 je_devout_theocracy = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/ig_icons/devout.dds"
 
 	immediate = {

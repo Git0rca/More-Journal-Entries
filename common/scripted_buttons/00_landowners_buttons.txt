@@ -1,0 +1,65 @@
+je_landowners_fate_modern_button = {
+	name = "je_landowners_fate_modern_button"
+	desc = "je_landowners_fate_modern_button_desc"
+
+	visible = {
+		has_variable = je_landowners_old_var
+	}
+	possible = {
+		custom_tooltip = {
+			text = je_landowners_fate_modern_button_possible_tt
+			has_variable = je_landowners_old_var
+			NOT = {
+				has_variable = landowners_fate_cooldown
+			}
+		} 		
+	}
+	effect = {
+		set_variable = je_landowners_modern_var
+		remove_variable = je_landowners_old_var
+		set_variable = {
+			name = landowners_fate_cooldown
+			months = 12
+		}
+		custom_tooltip = je_landowners_fate_modern_button_effect_tt
+		ig:ig_landowners = {
+			add_modifier = {
+				name = je_landowners_fate_modern_button_modifier
+			}
+		}
+		custom_tooltip = je_landowners_fate_modern_button_effect2_tt
+	}
+}
+
+je_landowners_fate_old_button = {
+	name = "je_landowners_fate_old_button"
+	desc = "je_landowners_fate_old_button_desc"
+
+	visible = {
+		has_variable = je_landowners_modern_var
+	}
+	possible = {
+		custom_tooltip = {
+			text = je_landowners_fate_old_button_possible_tt
+			has_variable = je_landowners_modern_var
+			NOT = {
+				has_variable = landowners_fate_cooldown
+			}
+		}
+		
+	}
+	effect = {
+		set_variable = je_landowners_old_var
+		remove_variable = je_landowners_modern_var
+		set_variable = {
+			name = landowners_fate_cooldown
+			months = 12
+		}
+		ig:ig_landowners = {
+			remove_modifier = {
+				name = je_landowners_fate_modern_button_modifier
+			}
+		}
+		custom_tooltip = je_landowners_fate_old_button_effect_tt
+	}
+}

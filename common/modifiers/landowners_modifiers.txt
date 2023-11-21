@@ -1,0 +1,19 @@
+landowners_1_a_modifier = {
+	interest_group_approval_add = 2
+}
+landowners_1_b_modifier = {
+	state_aristocrats_investment_pool_efficiency_mult = 0.25
+}
+landowners_1_b2_modifier = {
+	interest_group_approval_add = -2
+}
+
+landowners_fate_2_b_modifier = {
+	interest_group_pop_attraction_mult = -0.15
+}
+
+
+
+je_landowners_fate_modern_button_modifier = {
+	interest_group_approval_add = -2
+}

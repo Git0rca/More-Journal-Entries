@@ -20,7 +20,7 @@ intelligentsia_3_b_modifier = {
 }
 
 intelligentsia_4_a_modifier = {
-	ig_approval = 2
+	interest_group_approval_add = 2
 }
 intelligentsia_4_b_modifier = {
 	interest_group_pop_attraction_mult = -0.20

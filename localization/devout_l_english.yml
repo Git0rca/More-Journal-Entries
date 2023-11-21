@@ -32,7 +32,7 @@
 
   #journal
   je_devout_government: "Devout in Government!" #First Journal Entry cannot have a dynamic name right now
-  je_devout_government_reason: "The [SCOPE.gsInterestGroup('devout_ig').GetName] recently came to power, yet they still have to prove, that they can govern effectively."
+  je_devout_government_reason: "The [SCOPE.gsInterestGroup('devout_ig').GetName] came to power, yet they still have to prove, that they can govern effectively."
   je_devout_government_goal: "The [SCOPE.gsInterestGroup('devout_ig').GetName] has been part of a government with 50 or more legitimacy for at least 12 consecutive months."
   je_devout_powerful: "Powerful [SCOPE.gsInterestGroup('devout_ig').GetName]!"
   je_devout_powerful_reason: "To advance, you have to also make the [SCOPE.gsInterestGroup('devout_ig').GetName] Happy."

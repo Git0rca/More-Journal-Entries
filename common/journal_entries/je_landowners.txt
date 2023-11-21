@@ -1,0 +1,195 @@
+je_landowners_government = {
+	group = je_group_polical_affairs
+	icon = "gfx/interface/icons/ig_icons/landowners.dds"
+	can_deactivate = yes
+
+	progressbar = yes
+	current_value = {
+		value = root.var:je_landowners_1_var
+	}
+	
+	possible = {
+		ig:ig_landowners = {
+			is_marginal = no
+			is_in_government = yes
+		}
+	}
+
+	is_shown_when_inactive = {
+		NOT = { has_variable = landowners_government_done }
+		has_technology_researched = democracy
+	}
+
+	immediate = {
+		set_variable = {
+			name = je_landowners_1_var
+			value = 0
+		}
+		ig:ig_landowners = {
+			save_scope_as = landowners_ig
+		}
+	}
+
+	goal_add_value = {
+		add = 12
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					government_legitimacy >= 50
+					ig:ig_landowners = {
+						is_in_government = yes	
+					}
+					NOT = {
+						any_interest_group = {
+							is_insurrectionary = yes
+						}
+					}
+				}
+				change_variable = {
+					name = je_landowners_1_var
+					add = 1
+				}
+			}
+			else = {
+				set_variable = {
+					name = je_landowners_1_var
+					value = 0
+				}	
+			}	
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		add_journal_entry = {
+			type = je_landowners_fate
+		}
+		trigger_event = { id = landowners.1 }
+		set_variable = landowners_government_done
+	}
+}
+
+je_landowners_fate = {
+	group = je_group_polical_affairs
+	icon = "gfx/interface/icons/ig_icons/landowners.dds"
+
+	scripted_button = je_landowners_fate_modern_button
+	scripted_button = je_landowners_fate_old_button
+
+	progressbar = yes
+	current_value = {
+		value = root.var:je_landowners_fate_progress
+	}
+	goal_add_value = {
+		add = 100
+	}
+
+	immediate = {		 
+		set_variable = {
+			name = je_landowners_fate_progress
+			value = 0
+		}
+		ig:ig_landowners = {
+			save_scope_as = landowners_ig
+		}
+
+		set_variable = je_landowners_old_var
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = je_landowners_modern_var
+				}
+				
+				change_variable = {
+					name = je_landowners_fate_progress
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					has_variable = je_landowners_old_var
+				}
+				
+				change_variable = {
+					name = je_landowners_fate_progress
+					add = -1
+				}
+			}
+			if = {
+				limit = {
+					ig:ig_landowners = {
+						ig_leader = {
+							OR = {
+								has_ideology = ideology_humanitarian
+								has_ideology = ideology_republican_leader
+								has_ideology = ideology_reformer
+								has_ideology = ideology_radical
+							}
+						}		
+					}
+				}
+				
+				change_variable = {
+					name = je_landowners_fate_progress
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					root.var:je_landowners_fate_progress < 0
+				}
+				set_variable = {
+					name = je_landowners_fate_progress
+					value = 0
+				}
+			}
+		}
+		random_events = {
+			50 = 0
+			10 = landowners_fate.1
+			10 = landowners_fate.2
+			10 = landowners_fate.3
+		}
+	}
+
+	timeout = 3650 #right now its duable with just the button
+	on_timeout = {
+		trigger_event = { id = landowners.3}
+		remove_variable = je_landowners_modern_var
+		remove_variable = je_landowners_old_var
+		ig:ig_landowners = {
+			remove_modifier = {
+				name = je_landowners_fate_modern_button_modifier
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = landowners.2}
+		remove_variable = je_landowners_modern_var
+		remove_variable = je_landowners_old_var
+		ig:ig_landowners = {
+			remove_modifier = {
+				name = je_landowners_fate_modern_button_modifier
+			}
+		}
+	}	
+}
+

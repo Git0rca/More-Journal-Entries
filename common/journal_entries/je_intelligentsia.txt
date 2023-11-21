@@ -1,7 +1,8 @@
 #Intelligentsia in Government
 je_intelligentsia_government = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/ig_icons/intelligensia.dds" #this is a typo in the vanilla game files, i cannot change
+	can_deactivate = yes
 	
 	progressbar = yes
 	current_value = {
@@ -83,7 +84,7 @@ je_intelligentsia_government = {
 
 #Powerful Intelligentsia
 je_intelligentsia_powerful = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
 
 	immediate = {
@@ -116,7 +117,7 @@ je_intelligentsia_powerful = {
 
 #Happy Intelligentsia
 je_intelligentsia_happy = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/ig_icons/intelligensia.dds"
 
 	immediate = {
@@ -149,7 +150,7 @@ je_intelligentsia_happy = {
 }
 
 je_intelligentsia_equal = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/ideology_icons/abolitionist.dds"
 
 	immediate = {
@@ -192,7 +193,7 @@ je_intelligentsia_equal = {
 }
 
 je_intelligentsia_university = {
-	group = je_group_internal_affairs
+	group = je_group_polical_affairs
 	icon = "gfx/interface/icons/generic_icons/innovation.dds"
 
 	immediate = {

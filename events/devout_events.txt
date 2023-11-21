@@ -178,7 +178,7 @@ devout.4 = {
 		ig:ig_devout = {
 			add_modifier = {
 				name = devout_4_a_modifier
-				months = normal_modifier_time
+				months = long_modifier_time
 			}
 		}
 	}
