@@ -199,9 +199,16 @@ agrarian_party = {
 				desc = "usa_two_party_system"
 			}
 		}
-		if = { # a party for powerful farmers
+		if = { # a party for powerful farmers (ubermann92 improved)
 			limit = {
-				has_ideology = ideology:ideology_agrarian
+				law_stance = {
+					law = law_type:law_agrarianism
+					value > neutral
+				}
+				law_stance = {
+					law = law_type:law_homesteading
+					value > neutral
+				}
 				is_powerful = yes
 			}
 			add = {
@@ -242,7 +249,7 @@ agrarian_party = {
 				desc = "from_scandinavian"
 			}
 		}
-		if = { # pacifist anti-colonial alliance
+		if = { # pacifist anti-colonial alliance (unsure how to do without ideology. Maybe party stance national militia > neutral, but would indlude populist and particularist -ubermann92)
 			limit = {
 				leader = {
 					has_ideology = ideology:ideology_pacifist
@@ -256,7 +263,7 @@ agrarian_party = {
 				desc = "from_pacifism"
 			}
 		}
-		if = { # anti-immigration alliance ubermann92 improved version
+		if = { # anti-immigration alliance (ubermann92 improved)
 			limit = {
 				law_stance = {
 					law = law_type:law_no_migration_controls
@@ -281,11 +288,11 @@ agrarian_party = {
 				desc = "from_migration_law"
 			}
 		}
-		if = { # against arbitrary or militarized policing
+		if = { # against arbitrary or militarized policing (ubermann92 improved) 
 			limit = {
-				OR = {
-					has_ideology = ideology:ideology_liberal
-					has_ideology = ideology:ideology_particularist
+				law_stance = {
+					law = law_type:law_militarized_police
+					value < neutral
 				}
 				owner = {
 					OR = {	
@@ -299,13 +306,18 @@ agrarian_party = {
 				desc = "from_bad_police"
 			}
 		}
-		if = { # against land-based taxation
+		if = { # against land-based taxation (ubermann92 improved)
 			limit = {
 				OR = {
-					has_ideology = ideology:ideology_meritocratic
-					has_ideology = ideology:ideology_agrarian
+					law_stance = {
+						law = law_type:law_land_based_taxation
+						value < netural
+					}
 					leader = {
-						has_ideology = ideology:ideology_social_democrat
+						law_stance = {
+							law = law_type:law_land_based_taxation
+							value < netural
+						}
 					}
 				}
 				owner = {
@@ -317,12 +329,19 @@ agrarian_party = {
 				desc = "from_land_tax"
 			}
 		}
-		if = { # against free trade - peasant/socialist alliance
+		if = { # against free trade - peasant/socialist alliance (ubermann92 improved)
 			limit = {
 				OR = {
-					has_ideology = ideology:ideology_proletarian
-					has_ideology = ideology:ideology_agrarian
-					has_ideology = ideology:ideology_paternalistic
+					law_stance = {
+						law = law_type:law_free_trade
+						value < netural
+					}
+					leader = {
+						law_stance = {
+							law = law_type:law_free_trade
+							value < netural
+						}
+					}
 				}
 				owner = {
 					has_law = law_type:law_free_trade
@@ -338,21 +357,21 @@ agrarian_party = {
 				desc = "from_anti_free_trade"
 			}
 		}
-		if = { # against laissez-faire - peasant/socialist alliance
+		if = { # against laissez-faire - peasant/socialist alliance (ubermann92 improved; side effect: will now also apply to paternalistic)
 			limit = {
-				OR = {
-					has_ideology = ideology:ideology_proletarian
-					has_ideology = ideology:ideology_agrarian
-					leader = {
-						has_ideology = ideology:ideology_protectionist
-					}
+				law_stance = {
+					law = law_type:law_laissez_faire
+					value < neutral
 				}
 				owner = {
 					has_law = law_type:law_laissez_faire
 				}
 				NOT = {
 					leader = {
-						has_ideology = ideology:ideology_market_liberal
+						law_stance = {
+							law = law_type:law_peasant_levies
+							value > netural
+						} 
 					}
 				}
 			}
@@ -361,21 +380,20 @@ agrarian_party = {
 				desc = "from_anti_free_trade"
 			}
 		}
-		if = { # opposition to peasant levies
+		if = { # opposition to peasant levies (ubermann92 improved)
 			limit = {
 				OR = {
-					has_ideology = ideology:ideology_jingoist
-					has_ideology = ideology:ideology_particularist
-					has_ideology = ideology:ideology_sikh_moralist
+					law_stance = {
+						law = law_type:law_peasant_levies
+						value < netural
+					}
 					leader = {
-						OR = {
-							has_ideology = ideology:ideology_fascist
-							has_ideology = ideology:ideology_anarchist
-							has_ideology = ideology:ideology_pacifist
-							has_ideology = ideology:ideology_jingoist_leader
+						law_stance = {
+							law = law_type:law_peasant_levies
+							value < netural
 						}
 					}
-				}
+				}	
 				owner = {
 					has_law = law_type:law_peasant_levies
 				}
@@ -385,20 +403,21 @@ agrarian_party = {
 				desc = "from_peasant_levies"
 			}
 		}
-		if = { # anti-serfdom
+		if = { # anti-serfdom (ubermann92 improved)
 			limit = {
 				owner = {
 					has_law = law_type:law_serfdom
 				}
 				OR = {
-					has_ideology = ideology:ideology_egalitarian
-					has_ideology = ideology:ideology_anti_slavery
-					has_ideology = ideology:ideology_laissez_faire
-					has_ideology = ideology:ideology_particularist
+					law_stance = {
+						law = law_type:law_serfdom
+						value < netural
+					}
 					leader = {
-						has_ideology = ideology:ideology_abolitionist
-						has_ideology = ideology:ideology_social_democrat
-						has_ideology = ideology:ideology_communist
+						law_stance = {
+							law = law_type:law_serfdom
+							value < netural
+						}
 					}
 				}
 			}
@@ -407,15 +426,21 @@ agrarian_party = {
 				desc = "from_serfdom"
 			}
 		}
-		if = { # opposition to debt slavery
+		if = { # opposition to debt slavery (ubermann92 improved)
 			limit = {
 				owner = {
 					has_law = law_type:law_debt_slavery
 				}
 				OR = {
-					has_ideology = ideology:ideology_anti_slavery
+					law_stance = {
+						law = law_type:law_debt_slavery
+						value < netural
+					}
 					leader = {
-						has_ideology = ideology:ideology_abolitionist
+						law_stance = {
+							law = law_type:law_debt_slavery
+							value < netural
+						}
 					}
 				}
 			}
