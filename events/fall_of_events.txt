@@ -1,0 +1,89 @@
+namespace = fall_of
+
+fall_of.1 = { #initiation event
+	type = country_event
+	placement = root
+	title = fall_of.1.t
+	desc = fall_of.1.d
+	flavor = fall_of.1.f
+
+	duration = 1
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		NOT = {root = c:TUR} #Turkey already has their special Sick Man of Europe Events and JEs, they should not have to deal with another one
+		NOT = {
+			has_variable = fall_of_completed
+		}
+		NOT = {
+			any_country = {
+				has_variable = is_fall_of_target
+			}
+		}
+		country_rank = rank_value:great_power
+	}
+
+	immediate = {
+		set_variable = is_fall_of_target		
+		root = {
+			save_scope_as = fall_of_target
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					has_variable = is_fall_of_target
+				}
+			}
+			trigger_event = fall_of.2
+		}
+	}
+
+	option = {
+		name = fall_of.1.a
+		default_option = yes
+
+		add_journal_entry = {
+			type = je_fall_of_main
+		}
+		add_modifier = {
+			name = fall_of_main_modifier
+		}
+	}
+}
+
+fall_of.2 = { #international announcement event
+	type = country_event
+	placement = root
+	title = fall_of.2.t
+	desc = fall_of.2.d
+	flavor = fall_of.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_election"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		#triggered by fall_of.1
+	}
+
+
+	option = {
+		name = fall_of.2.a
+		default_option = yes
+
+
+	}
+}

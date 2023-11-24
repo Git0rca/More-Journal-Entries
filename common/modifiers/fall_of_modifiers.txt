@@ -1,0 +1,18 @@
+fall_of_main_modifier = {
+    country_authority_mult = -0.5
+    country_bureaucracy_mult = -0.25
+    country_influence_mult = -0.20
+    country_legitimacy_base_add = -20
+    country_prestige_mult = -0.33
+    unit_army_defense_mult = -0.10
+    unit_army_offense_mult = -0.10
+    state_radicals_from_sol_change_mult = 0.25
+}
+
+fall_of_completed_good_modifier = {
+    country_prestige_mult = 0.10
+    country_influence_add = 200
+}
+fall_of_completed_bad_modifier = {
+    country_prestige_mult = -0.10
+}

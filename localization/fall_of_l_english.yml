@@ -1,0 +1,11 @@
+﻿l_english:
+  #journal entries
+  je_fall_of_main: "The Fall of [SCOPE.sCountry('fall_of_target').GetNameNoFlag]"
+  je_fall_of_main_reason: "Our country is on the verge of collapse, and we have to save it!"
+
+  #events
+  fall_of.1.t: "The Fall of [SCOPE.sCountry('fall_of_target').GetNameNoFlag]"
+  fall_of.1.t: "The Fall of [SCOPE.sCountry('fall_of_target').GetNameNoFlag]"
+  fall_of.1.t: "The Fall of [SCOPE.sCountry('fall_of_target').GetNameNoFlag]"
+
+  fall_of.2.t: "The Fall of [SCOPE.sCountry('fall_of_target').GetNameNoFlag]"

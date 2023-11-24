@@ -1,0 +1,6 @@
+on_monthly_pulse_country = {
+	random_events = {
+		1 = 0
+		99 = fall_of.1
+	}	
+}

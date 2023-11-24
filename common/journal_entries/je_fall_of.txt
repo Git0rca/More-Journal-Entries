@@ -1,0 +1,36 @@
+je_fall_of_main = {
+	group = je_group_crises
+	icon = "gfx/interface/icons/event_icons/event_skull.dds" 
+
+	immediate = {
+		root = {
+			save_scope_as = fall_of_target
+		}
+	}
+
+	complete = {
+		legitimacy >= 80
+	}
+	on_complete = {
+		set_variable = fall_of_completed
+		remove_variable = is_fall_of_target
+
+		remove_modifier = fall_of_main_modifier
+		add_modifier = {
+			name = fall_of_completed_good_modifier
+		}
+	}
+
+	fail = {
+
+	}
+	on_fail = {
+		set_variable = fall_of_completed
+		remove_variable = is_fall_of_target
+
+		remove_modifier = fall_of_main_modifier
+		add_modifier = {
+			name = fall_of_completed_bad_modifier
+		}
+	}
+}
