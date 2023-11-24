@@ -162,6 +162,12 @@ je_landowners_fate = {
 			10 = landowners_fate.3
 		}
 	}
+	
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+	}
 
 	timeout = 3650 #right now its duable with just the button
 	on_timeout = {
@@ -169,26 +175,18 @@ je_landowners_fate = {
 		remove_variable = je_landowners_modern_var
 		remove_variable = je_landowners_old_var
 		ig:ig_landowners = {
-			remove_modifier = {
-				name = je_landowners_fate_modern_button_modifier
-			}
+			remove_modifier = je_landowners_fate_modern_button_modifier
 		}
 	}
 
-	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
-	}
+	
 
 	on_complete = {
 		trigger_event = { id = landowners.2}
 		remove_variable = je_landowners_modern_var
 		remove_variable = je_landowners_old_var
 		ig:ig_landowners = {
-			remove_modifier = {
-				name = je_landowners_fate_modern_button_modifier
-			}
+			remove_modifier = je_landowners_fate_modern_button_modifier
 		}
 	}	
 }
